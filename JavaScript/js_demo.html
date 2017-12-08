@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 id="header"></h1>
+	<script>
+		document.getElementById("header").innerHTML = "Hello World!";
+		var lang = "JavaScript";
+
+function myFunction(lang) {
+	this.lang = lang;
+	alert("Hello, welcome to " + this.lang);
+	console.log("Hello, welcome to " + this.lang);
+}
+var Test = new myFunction(lang);
+	</script>
+
+</body>
+</html>
