@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Samurai Pizza</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/pizza_style.css">
+</head>
+<body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    
+	  </div>
+	</div>
+	<!-- main content -->
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-8 mt-5 px-2">
+
+            <h3 class="text-success">Samurai Pizza</h3>
+            <img class="img-fluid" src="./img/Pan_Veggie.png" alt=""/>
+            <p></p>
+            <button type="button" class="btn btn-danger btn-lg btn-block" id="order" data-toggle="modal" data-target="#orderModal" disabled>Order</button>
+          </div>
+          <div class="col-md-4 mt-5 px-2">
+          	<h4 class="text-success">Your crust:</h4>
+          	<div class="dropdown open" id="select-crust">
+			  <button class="btn btn-secondary dropdown-toggle" type="hidden" value = "Plain" id="select-crust-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select Crust
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			  	<a class="dropdown-item" href="#" selected><img class="img-fluid" src="./img/crust_plain.png" alt=""/>Plain</a>
+			    <a class="dropdown-item" href="#"><img class="img-fluid" src="./img/crust_cheesy.png" alt=""/>Cheese Stuffed</a>
+			    <a class="dropdown-item" href="#"><img class="img-fluid" src="./img/crust_gb.png" alt=""/>Garlic Butter</a>
+			    <a class="dropdown-item" href="#"><img class="img-fluid" src="./img/crust_spicy.png" alt=""/>Spicy</a>
+			  </div>
+			</div>
+			<h4 class="text-success">Your size:</h4>
+			<div class="dropdown open" id="select-size">
+			  <button class="btn btn-secondary dropdown-toggle" type="hidden" value = "Plain" id="select-size-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select Size
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			  	<a class="dropdown-item" href="#" selected>Personal</a>
+			    <a class="dropdown-item" href="#">Medium</a>
+			    <a class="dropdown-item" href="#">Large</a>
+			    <a class="dropdown-item" href="#">Extra Large</a>
+			  </div>
+			</div>
+			<h4 class="text-success">Your cheese:</h4>
+			<div class="dropdown open" id="select-cheese">
+			  <button class="btn btn-secondary dropdown-toggle" type="hidden" value = "Plain" id="select-cheese-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select Cheese
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			  	<a class="dropdown-item" href="#" selected>Regular</a>
+			    <a class="dropdown-item" href="#">No Cheese</a>
+			    <a class="dropdown-item" href="#">Extra Cheese</a>
+			  </div>
+			</div>
+			<h4 class="text-success">Your sauce:</h4>
+			<div class="dropdown open" id="select-sause">
+			  <button class="btn btn-secondary dropdown-toggle" type="hidden" value = "Plain" id="select-sauce-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Select Sauce
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			  	<a class="dropdown-item" href="#" selected>Marinara Sauce</a>
+			    <a class="dropdown-item" href="#">White Sauce</a>
+			    <a class="dropdown-item" href="#">Barbeque Sauce</a>
+			    <a class="dropdown-item" href="#">No Sauce</a>
+			  </div>
+
+			</div>
+          </div>
+        </div>
+     </div>
+     <div class="container my-5" id="add-ingridients">
+     	<h3>Add Ingridients:</h3>
+     	<div class="row">          
+            <div class="col-sm-4">
+                <div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Anchovies.jpg" alt="Anchovies">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Anchovies">
+				    </span>
+				    <p class="card-text">Anchovies &nbsp; &nbsp;</p>
+				    
+				  </div>
+				</div>
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Capsicum.jpg" alt="Green Pepper">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Green Pepper">
+				    </span>
+				    <p class="card-text">Green Pepper &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Italian-Sausage.jpg" alt="Sausage">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Sausage">
+				    </span>
+				    <p class="card-text">Sausage &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Mozzarella-Cheese.jpg" alt="Mozzarella-Cheese">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Mozzarella-Cheese">
+				    </span>
+				    <p class="card-text">Mozzarella-Cheese &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Mushrooms.jpg" alt="Mushrooms">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Mushrooms">
+				    </span>
+				    <p class="card-text">Mushrooms &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Onions.jpg" alt="Onions">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Onions">
+				    </span>
+				    <p class="card-text">Onions &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Pepperoni.jpg" alt="Pepperoni">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Pepperoni">
+				    </span>
+				    <p class="card-text">Pepperoni &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+				<div class="card" style="width: 14rem;">
+				  <img class="card-img-top" src="./img/Pineapple.jpg" alt="Pineapple">
+				  <div class="card-body row">
+				  	<span class="input-group-addon">
+				       <input type="checkbox" aria-label="Checkbox for Pineapple">
+				    </span>
+				    <p class="card-text">Pineapple &nbsp; &nbsp;</p>
+				  </div>
+				</div>
+         	</div>
+        </div>
+      </div>
+      <!-- /main content -->
+
+      <!-- modal -->
+      <!-- Modal -->
+		<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">You ordered:</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+				  <div class="container-fluid">
+			        <div class="row" id="size">
+			          <div class="col-8 col-sm-6" >
+			            Large Pizza
+			          </div>
+			          <div class="col-4 col-sm-6">
+			            $12
+			          </div>
+			        </div>
+			        <div class="row" id="cheese">
+			          <div class="col-8 col-sm-6">
+			            Regular cheese
+
+			          </div>
+			          <div class="col-4 col-sm-6">
+			            $0
+			          </div>
+			        </div>
+			        <div class="row" id="sauce">
+			          <div class="col-8 col-sm-6">
+			            Marinara sauce
+			          </div>
+			          <div class="col-4 col-sm-6">
+			            $0
+			          </div>
+			        </div>
+			        <div class="row" id="crust">
+			          <div class="col-8 col-sm-6">
+			            
+						Plain Crust
+			          </div>
+			          <div class="col-4 col-sm-6">
+			            $0
+			          </div>
+			        </div>
+			        
+			        <div class="row" id="ingridients">
+			          <div class="col-8 col-sm-6">
+			          </div>
+			          <div class="col-4 col-sm-6">
+			            
+			          </div>
+			        </div>
+			        <div class="row" id="total">
+			          <div class="col-8 col-sm-6" class="font-weight-bold text-success">
+			            Total:
+			          </div>
+			          <div class="col-4 col-sm-6" class="font-weight-bold text-success">
+			            $6
+			          </div>
+			        </div>
+				  </div>
+				</div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Get Pizza</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$("#order").click(function(){
+			var total = 0;
+      		var size = document.getElementById("select-size-btn").innerText;
+      		
+      		switch(size) {
+			    case "Personal":
+			        price = 6;
+			        break;
+			    case "Medium":
+			        price = 10;
+			        break;
+			    case "Large":
+			        price = 14;
+			        break;
+		        case "Extra Large":
+			        price = 16;
+			        break;
+			    default:
+			        console.log("Wrong size");
+			}
+      		$('#size').replaceWith("<div class=\"row\" id=\"size\"><div class=\"col-8 col-sm-6\" >" +
+			            size + " Pizza" + "</div> <div class=\"col-4 col-sm-6\"> $" +
+			            price + "</div></div>");
+      		total += price;
+      		var cheese = document.getElementById("select-cheese-btn").innerText;
+      		console.log(cheese);
+      		switch(cheese) {
+			    case "Regular":
+			        price = 0;
+			        break;
+			    case "No Cheese":
+			        price = 0;
+			        break;
+			    case "Extra Cheese":
+			        price = 3;
+			        break;
+			    default:
+			        console.log("Wrong cheese");
+			}
+      		$('#cheese').replaceWith("<div class=\"row\" id=\"cheese\"><div class=\"col-8 col-sm-6\" >" +
+			            cheese + "</div> <div class=\"col-4 col-sm-6\"> $" +
+			            price + "</div></div>");
+      		total += price;
+      		var crust = document.getElementById("select-crust-btn").innerText;
+      		console.log(crust);
+      		switch(crust) {
+			    case "Cheese Stuffed":
+			        price = 3;
+			        break;
+			    
+			    default:
+			        price = 0;
+			}
+      		$('#crust').replaceWith("<div class=\"row\" id=\"crust\"><div class=\"col-8 col-sm-6\" >" +
+			            crust + "</div> <div class=\"col-4 col-sm-6\"> $" +
+			            price + "</div></div>");
+      		total += price;
+      		var sauce = document.getElementById("select-sauce-btn").innerText;
+      		console.log(sauce);
+      		switch(sauce) {
+			    case "Marinara Sauce":
+			        price = 1;
+			        break;
+			    case "White Sauce":
+			        price = 2;
+			        break;
+			    case "Barbeque Sauce":
+			        price = 3;
+			        break;
+		        case "No Sauce":
+			        price = 0;
+			        break;
+			    default:
+			        console.log("Wrong Sauce: " + sauce);
+			}
+			
+      		$('#sauce').replaceWith("<div class=\"row\" id=\"sauce\"><div class=\"col-8 col-sm-6\" >" +
+			            sauce + "</div> <div class=\"col-4 col-sm-6\"> $" +
+			            price + "</div></div>");
+      		total += price;
+      		ingridients = "";
+      		ingridients_total = 0;
+			$("input:checked").each(function() {
+				ingridients += "<div class=\"row\"><div class=\"col-8 col-sm-6 text-muted\" > &nbsp; &nbsp;" +
+			            $(this).attr('aria-label').substring(13) + "</div> <div class=\"col-4 col-sm-6 text-muted\"> $1 </div></div>";
+			    ingridients_total++;
+			});
+			console.log(ingridients);
+			if(ingridients_total > 0) {
+				ingridients = "<div class=\"row\"><div class=\"col-8 col-sm-6 text-success\" > Ingridients:</div> <div class=\"col-4 col-sm-6 text-success\"> $" + ingridients_total + " </div></div>" + ingridients;
+				$('#ingridients').replaceWith(ingridients);
+				total += ingridients_total;
+      		}
+      		$('#total').replaceWith("<div class=\"row\" id=\"total\"><div class=\"col-8 col-sm-6 font-weight-bold text-success\" >" +
+			            "Total:" + "</div> <div class=\"col-4 col-sm-6 font-weight-bold text-success\"> $" +
+			            total + "</div></div>");
+		});
+      	$(".dropdown-item").click(function(){
+      		$(this).parents(".dropdown").find('.btn').text($(this).text())
+      		validate();
+		});
+		function validate() {
+			 var list = document.getElementsByClassName("btn");
+			 var flag = true;
+			 for (var i = 0, len = list.length; i < len; i++) {
+			 	var selectedValue = list[i].innerText;
+			 	console.log(list[i].innerText);
+			    if (selectedValue != "Order" && selectedValue.indexOf("Select") !== -1)
+			   		flag = false;
+			}
+			if(flag)
+				document.getElementById("order").disabled = false;
+		}
+      </script>
+</body>
+</html>
